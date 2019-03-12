@@ -1,0 +1,58 @@
+<p id="notice"><%= notice %></p>
+
+<h2>
+  <%= @question.title %>
+</h2>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="panel panel-defaulte show_panel a_1">
+      <div class="panel-body"><p><%= @question.a_1 %></p></div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-defaulte show_panel a_2">
+      <div class="panel-body"><p><%= @question.a_2 %></p></div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-defaulte show_panel a_3">
+      <div class="panel-body"><p><%= @question.a_3 %></p></div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="panel panel-defaulte show_panel a_4">
+      <div class="panel-body"><p><%= @question.a_4 %></p></div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-12">
+    <% if params[:answer] && params[:answer].to_i == @question.answer %>
+      <h3>正解！！答えは<%= eval("@question.a_" + @question.answer.to_s) %>です。</h3>
+    <% elsif params[:answer] %>
+      <h3>残念・・・答えは<%= eval("@question.a_" + @question.answer.to_s) %>でした。</h3>
+    <% end %>
+  </div>
+</div>
+
+
+
+<% if logged_in? %>
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+<% end %>
+  <%= link_to 'Back', questions_path %>
+
+
+
+<style>
+  .a_<%= @question.answer %> {
+    border-color: red;
+  }
+  <% if params[:answer] && params[:answer].to_i != @question.answer %>
+    .a_<%= params[:answer] %> {
+      border-color: blue;
+    }
+  <% end %>
+</style>
+
