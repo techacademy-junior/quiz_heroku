@@ -1,6 +1,10 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  padding-top: 70px;
+}
+
 .field_with_errors {
   display: block!important;
 }
@@ -10,8 +14,8 @@
   align-items: center;
   justify-content: space-around;
   border-color: #3c3c3c;
-  height: 150px;
+  height: 70px;
   p {
-    font-size: 2em;
+    font-size: 1em;
   }
 }

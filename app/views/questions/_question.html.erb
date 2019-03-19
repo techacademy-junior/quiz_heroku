@@ -1,0 +1,19 @@
+<div class="panel panel-default">
+  <div class="panel-heading"><%= question.title %></div>
+
+  <div class="panel-body">
+    <% if !message.finished %>
+      <%= link_to question.a_1, messages_path(question_id: question.id, answer: 1, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <%= link_to question.a_2, messages_path(question_id: question.id, answer: 2, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <%= link_to question.a_3, messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <%= link_to question.a_4, messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+    <% else %>
+       <p>回答済みのクイズです</p>
+    <% end %>
+
+    <% if logged_in? %>
+      <%= link_to 'Edit', edit_question_path(question) %> |
+      <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </div>
+</div>

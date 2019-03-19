@@ -7,10 +7,10 @@
         <div class="panel-heading"><%= question.title %></div>
 
         <div class="panel-body">
-          <%= link_to question.a_1, question_path(question, answer: 1), class: "btn btn-default btn-xs" %>
-          <%= link_to question.a_2, question_path(question, answer: 2), class: "btn btn-default btn-xs" %>
-          <%= link_to question.a_3, question_path(question, answer: 3), class: "btn btn-default btn-xs" %>
-          <%= link_to question.a_4, question_path(question, answer: 4), class: "btn btn-default btn-xs" %>
+          <%= link_to question.a_1, messages_path(question_id: question.id, answer: 1),method: :post, class: "btn btn-default btn-xs" %>
+          <%= link_to question.a_2, messages_path(question_id: question.id, answer: 2),method: :post, class: "btn btn-default btn-xs" %>
+          <%= link_to question.a_3, messages_path(question_id: question.id, answer: 3),method: :post, class: "btn btn-default btn-xs" %>
+          <%= link_to question.a_4, messages_path(question_id: question.id, answer: 4),method: :post, class: "btn btn-default btn-xs" %>
           <% if logged_in? %>
             <%= link_to 'Edit', edit_question_path(question) %> |
             <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>

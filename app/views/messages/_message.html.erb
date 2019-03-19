@@ -1,0 +1,7 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <%= message.content %>
+    <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
+    <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
+  </div>
+</div>
