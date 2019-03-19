@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
   def index
-    @messages = Message.all
+    @messages = Message.all.order(created_at: :asc)
     @message = Message.new
   end
 
@@ -21,7 +21,7 @@ class MessagesController < ApplicationController
     elsif @message.save
       redirect_to root_path
     else
-      @messages = Message.all
+      @messages = Message.all.order(created_at: :asc)
       render :index
     end
   end
