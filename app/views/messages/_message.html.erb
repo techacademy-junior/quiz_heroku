@@ -1,7 +1,23 @@
-<div class="panel panel-default">
-  <div class="panel-body">
-    <%= message.content %>
-    <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
-    <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
+<% if message.robo == true %>
+  <div class="balloon6">
+    <div class="faceicon">
+      <%= image_tag '/robo.png' %>
+    </div>
+    <div class="chatting">
+      <div class="says">
+        <%= message.content %>
+        <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
+        <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
+      </div>
+    </div>
   </div>
-</div>
+<% else %>
+  <div class="mycomment">
+    <p>
+      <%= message.content %>
+      <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
+      <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
+    </p>
+  </div>
+<% end %>
+

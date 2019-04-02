@@ -7,7 +7,8 @@ class MessagesController < ApplicationController
   def create
     if params[:question_id]
       @question = Question.find(params[:question_id])
-      @message = Message.new(content: "あなたの答えは " + eval("@question.a_#{params[:answer]}") + " です", answer: params[:answer], question_id: @question.id)
+      Message.create!(content: eval("@question.a_#{params[:answer]}"))
+      @message = Message.new(content: "あなたの答えは " + eval("@question.a_#{params[:answer]}") + " です", answer: params[:answer], question_id: @question.id, robo: true)
     else
       @message = Message.new(message_params)
     end

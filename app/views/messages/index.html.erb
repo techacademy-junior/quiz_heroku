@@ -1,9 +1,13 @@
 <h1>Messages#index</h1>
 <p>Find me in app/views/messages/index.html.erb</p>
 <div id="parent">
-<%= render @messages %>
+  <div class="line-bc">
+    <%= render @messages %>
+  </div>
 
-<%= render 'form', message: @message %>
+<footer>
+  <%= render 'form', message: @message %>
+</footer>
 </div>
 <script>
   function footerStart(selector){
