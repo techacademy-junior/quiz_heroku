@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 body {
-  padding-top: 70px;
+  padding-top: 50px;
 }
 
 .field_with_errors {
@@ -14,7 +14,7 @@ body {
   align-items: center;
   justify-content: space-around;
   border-color: #3c3c3c;
-  height: 70px;
+  min-height: 70px;
   p {
     font-size: 1em;
   }

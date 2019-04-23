@@ -1,20 +1,18 @@
-<h1>Messages#index</h1>
-<p>Find me in app/views/messages/index.html.erb</p>
 <div id="parent">
   <div class="line-bc">
     <%= render @messages %>
   </div>
 
-<footer>
-  <%= render 'form', message: @message %>
-</footer>
+  <footer>
+    <%= render 'form', message: @message %>
+  </footer>
 </div>
+
 <script>
   function footerStart(selector){
-    // #itemまでスクロール
-    $('html,body').animate({scrollTop: $(selector).offset().top},'slow');
-    //スクロールの着地点を生成
-  }$("#parent").append("<div id='item'></div>");
-  //セレクタ指定
+    $('html').animate({scrollTop: $(selector).offset().top}, 0);
+  }
+
+  $("#parent").append("<div id='item'></div>");
   footerStart("#item");
 </script>

@@ -1,27 +1,31 @@
 <p id="notice"><%= notice %></p>
+<div class="panel panel-default">
+  <div class="panel-heading"><%= question.title %></div>
 
-<h2>
-  <%= question.title %>
-</h2>
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_1_<%= message.id %>">
-      <div class="panel-body"><p><%= question.a_1 %></p></div>
+  <div class="panel-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-defaulte show_panel a_1_<%= message.id %>">
+          <div class="panel-body"><p><%= question.a_1 %></p></div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-defaulte show_panel a_2_<%= message.id %>">
+          <div class="panel-body"><p><%= question.a_2 %></p></div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_2_<%= message.id %>">
-      <div class="panel-body"><p><%= question.a_2 %></p></div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_3_<%= message.id %>">
-      <div class="panel-body"><p><%= question.a_3 %></p></div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_4_<%= message.id %>">
-      <div class="panel-body"><p><%= question.a_4 %></p></div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="panel panel-defaulte show_panel a_3_<%= message.id %>">
+          <div class="panel-body"><p><%= question.a_3 %></p></div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="panel panel-defaulte show_panel a_4_<%= message.id %>">
+          <div class="panel-body"><p><%= question.a_4 %></p></div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -29,19 +33,17 @@
 <div class="row">
   <div class="col-sm-12">
     <% if message.answer == question.answer %>
-      <h3>正解！！答えは<%= eval("question.a_" + question.answer.to_s) %>です。</h3>
+      <h3>正解！！答えは<%= answer_select(question) %>です。</h3>
     <% else %>
-      <h3>残念・・・答えは<%= eval("question.a_" + question.answer.to_s) %>でした。</h3>
+      <h3>残念・・・答えは<%= answer_select(question) %>でした。</h3>
     <% end %>
   </div>
 </div>
 
 <% if logged_in? %>
-  <%= link_to 'Edit', edit_question_path(question) %>
-  <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%#= link_to 'Edit', edit_question_path(question) %>
+  <%#= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-
-
 
 <style>
   .a_<%= question.answer %>_<%= message.id %> {

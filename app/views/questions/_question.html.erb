@@ -3,15 +3,47 @@
 
   <div class="panel-body">
     <% if !message.finished %>
-      <%= link_to question.a_1, messages_path(question_id: question.id, answer: 1, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
-      <%= link_to question.a_2, messages_path(question_id: question.id, answer: 2, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
-      <%= link_to question.a_3, messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
-      <%= link_to question.a_4, messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <div class="row">
+        <%= link_to(messages_path(question_id: question.id, answer: 1, message_id: message.id), method: :post) do %>
+          <div class="col-sm-6">
+            <div class="panel panel-defaulte show_panel a_1">
+              <div class="panel-body"><p><%= question.a_1 %></p></div>
+            </div>
+          </div>
+        <% end %>
+        <%= link_to(messages_path(question_id: question.id, answer: 2, message_id: message.id), method: :post) do %>
+          <div class="col-sm-6">
+            <div class="panel panel-defaulte show_panel a_2">
+              <div class="panel-body"><p><%= question.a_2 %></p></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="row">
+        <%= link_to(messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post) do %>
+          <div class="col-sm-6">
+            <div class="panel panel-defaulte show_panel a_3">
+              <div class="panel-body"><p><%= question.a_3 %></p></div>
+            </div>
+          </div>
+        <% end %>
+        <%= link_to(messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post) do %>
+          <div class="col-sm-6">
+            <div class="panel panel-defaulte show_panel a_4">
+              <div class="panel-body"><p><%= question.a_4 %></p></div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <%#= link_to question.a_1, messages_path(question_id: question.id, answer: 1, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <%#= link_to question.a_2, messages_path(question_id: question.id, answer: 2, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <%#= link_to question.a_3, messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
+      <%#= link_to question.a_4, messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post, class: "btn btn-default btn-xs" %>
     <% else %>
        <p>回答済みのクイズです</p>
     <% end %>
 
-    <% if logged_in? && !message.finished %>
+    <% if logged_in?  %>
       <%= link_to 'Edit', edit_question_path(question) %> |
       <%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
     <% end %>

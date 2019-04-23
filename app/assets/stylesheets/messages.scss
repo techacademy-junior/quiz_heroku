@@ -6,9 +6,6 @@
   background-color: #83A3CC;
 }
 
-
-
-/*以下、①背景色など*/
 .line-bc {
   padding: 20px 10px;
   max-width: 450px;
@@ -19,7 +16,6 @@
 
 }
 
-/*以下、②左側のコメント*/
 .balloon6 {
   width: 100%;
   margin: 10px 0;
@@ -63,15 +59,16 @@
   -webkit-transform: rotate(35deg);
   transform: rotate(35deg);
 }
+
 .says p {
   margin: 0;
   padding: 0;
 }
 
-/*以下、③右側の緑コメント*/
 .mycomment {
   margin: 10px 0;
 }
+
 .mycomment p {
   display: inline-block;
   position: relative;
@@ -97,12 +94,13 @@
 
 #message_content {
   border-radius: 12px;
-  width: 85%;
+  width: 80%;
   float: left;
 }
 
 #submit_button {
   float: right;
+  width: 18%;
   border-radius: 12px;
   margin-bottom: 15px;
 }
