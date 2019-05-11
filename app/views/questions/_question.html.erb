@@ -4,10 +4,10 @@
   </div>
   <% if !message.finished %>
     <div class="list-group">
-      <%= link_to( question.a_1, messages_path(question_id: question.id, answer: 1, message_id: message.id), method: :post, class: 'list-group-item') %>
-      <%= link_to( question.a_2, messages_path(question_id: question.id, answer: 2, message_id: message.id), method: :post, class: 'list-group-item') %>
-      <%= link_to( question.a_3, messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post, class: 'list-group-item') %>
-      <%= link_to( question.a_4, messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post, class: 'list-group-item') %>
+      <%= link_to( question.a_1, messages_path(question_id: question.id, answer: 1, message_id: message.id), method: :post, class: 'list-group-item', remote: true) %>
+      <%= link_to( question.a_2, messages_path(question_id: question.id, answer: 2, message_id: message.id), method: :post, class: 'list-group-item', remote: true) %>
+      <%= link_to( question.a_3, messages_path(question_id: question.id, answer: 3, message_id: message.id), method: :post, class: 'list-group-item', remote: true) %>
+      <%= link_to( question.a_4, messages_path(question_id: question.id, answer: 4, message_id: message.id), method: :post, class: 'list-group-item', remote: true) %>
     </div>
     <% if logged_in?  %>
       <div class="comment-menu panel-body text-right">

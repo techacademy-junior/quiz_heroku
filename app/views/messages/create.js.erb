@@ -1,0 +1,11 @@
+<% if @message_finished %>
+$('.robo-comment.comment:last').remove();
+$('.main .container-fluid').append('<%=j render 'messages/message', message: @message_finished %>');
+$('.main .container-fluid').append('<%=j render 'messages/message', message: @message_user %>');
+<% end %>
+$('.main .container-fluid').append('<%=j render 'messages/message', message: @message %>');
+<% if @message_robo %>
+  $('.main .container-fluid').append('<%=j render 'messages/message', message: @message_robo %>');
+<% end %>
+$('#message_content').val('');
+footerStart("#item");
