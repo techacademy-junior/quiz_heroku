@@ -1,10 +1,14 @@
 <div id="parent">
-  <div class="line-bc">
-    <%= render @messages %>
+  <div class="main">
+    <div class="container-fluid">
+      <%= render @messages %>
+    </div>
   </div>
 
-  <footer>
-    <%= render 'form', message: @message %>
+  <footer class="footer">
+    <div class="container-fluid">
+      <%= render 'form', message: @message %>
+    </div>
   </footer>
 </div>
 

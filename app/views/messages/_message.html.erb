@@ -1,23 +1,23 @@
 <% if message.robo == true %>
-  <div class="balloon6">
-    <div class="faceicon">
-      <%= image_tag '/robo.png' %>
-    </div>
-    <div class="chatting">
-      <div class="says">
-        <%= message.content %>
-        <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
-        <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
-      </div>
+  <div class="robo-comment comment">
+    <div class="icon-chat"></div>
+    <div class="message">
+
+      <%== message.content %>
+      <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
+      <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
+
     </div>
   </div>
 <% else %>
-  <div class="mycomment">
-    <p>
-      <%= message.content %>
-      <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
-      <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
-    </p>
+  <div class="my-comment comment text-right">
+    <div class="message">
+      <p>
+        <%= message.content %>
+        <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
+        <%= render 'questions/show', question: message.question, message: message if message.answer && message.question_id %>
+      </p>
+    </div>
   </div>
 <% end %>
 

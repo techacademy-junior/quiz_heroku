@@ -1,111 +1,286 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-.container {
-  max-width: 480px;
-  background-color: #83A3CC;
-}
+//// Place all the styles related to the messages controller here.
+//// They will automatically be included in application.css.
+//// You can use Sass (SCSS) here: http://sass-lang.com/
+//.container {
+//  max-width: 480px;
+//  background-color: #83A3CC;
+//}
+//
+//.line-bc {
+//  padding: 20px 10px;
+//  max-width: 450px;
+//  margin: 15px auto;
+//  text-align: right;
+//  font-size: 14px;
+//  background: #7da4cd;
+//
+//}
+//
+//.balloon6 {
+//  width: 100%;
+//  margin: 10px 0;
+//  overflow: hidden;
+//}
+//
+//.balloon6 .faceicon {
+//  float: left;
+//  margin-right: -50px;
+//  width: 40px;
+//}
+//
+//.balloon6 .faceicon img{
+//  width: 100%;
+//  height: auto;
+//  border-radius: 50%;
+//}
+//.balloon6 .chatting {
+//  width: 100%;
+//  text-align: left;
+//}
+//.says {
+//  display: inline-block;
+//  position: relative;
+//  margin: 0 0 0 50px;
+//  padding: 10px;
+//  max-width: 250px;
+//  border-radius: 12px;
+//  background: #edf1ee;
+//}
+//
+//.says:after {
+//  content: "";
+//  display: inline-block;
+//  position: absolute;
+//  top: 3px;
+//  left: -19px;
+//  border: 8px solid transparent;
+//  border-right: 18px solid #edf1ee;
+//  -ms-transform: rotate(35deg);
+//  -webkit-transform: rotate(35deg);
+//  transform: rotate(35deg);
+//}
+//
+//.says p {
+//  margin: 0;
+//  padding: 0;
+//}
+//
+//.mycomment {
+//  margin: 10px 0;
+//}
+//
+//.mycomment p {
+//  display: inline-block;
+//  position: relative;
+//  margin: 0 10px 0 0;
+//  padding: 8px;
+//  max-width: 250px;
+//  border-radius: 12px;
+//  background: #30e852;
+//  font-size: 15px;
+//}
+//
+//.mycomment p:after {
+//  content: "";
+//  position: absolute;
+//  top: 3px;
+//  right: -19px;
+//  border: 8px solid transparent;
+//  border-left: 18px solid #30e852;
+//  -ms-transform: rotate(-35deg);
+//  -webkit-transform: rotate(-35deg);
+//  transform: rotate(-35deg);
+//}
+//
+//#message_content {
+//  border-radius: 12px;
+//  width: 80%;
+//  float: left;
+//}
+//
+//#submit_button {
+//  float: right;
+//  width: 18%;
+//  border-radius: 12px;
+//  margin-bottom: 15px;
+//}
+//
+//.navbar {
+//  background-color: #fff;
+//  border: 0;
+//}
 
-.line-bc {
-  padding: 20px 10px;
-  max-width: 450px;
-  margin: 15px auto;
-  text-align: right;
-  font-size: 14px;
-  background: #7da4cd;
+/*
+ * ベースレイアウト
+ *
+ */
 
-}
-
-.balloon6 {
-  width: 100%;
-  margin: 10px 0;
-  overflow: hidden;
-}
-
-.balloon6 .faceicon {
-  float: left;
-  margin-right: -50px;
-  width: 40px;
-}
-
-.balloon6 .faceicon img{
-  width: 100%;
-  height: auto;
-  border-radius: 50%;
-}
-.balloon6 .chatting {
-  width: 100%;
-  text-align: left;
-}
-.says {
-  display: inline-block;
-  position: relative;
-  margin: 0 0 0 50px;
-  padding: 10px;
-  max-width: 250px;
-  border-radius: 12px;
-  background: #edf1ee;
-}
-
-.says:after {
-  content: "";
-  display: inline-block;
-  position: absolute;
-  top: 3px;
-  left: -19px;
-  border: 8px solid transparent;
-  border-right: 18px solid #edf1ee;
-  -ms-transform: rotate(35deg);
-  -webkit-transform: rotate(35deg);
-  transform: rotate(35deg);
-}
-
-.says p {
-  margin: 0;
-  padding: 0;
-}
-
-.mycomment {
-  margin: 10px 0;
-}
-
-.mycomment p {
-  display: inline-block;
-  position: relative;
-  margin: 0 10px 0 0;
-  padding: 8px;
-  max-width: 250px;
-  border-radius: 12px;
-  background: #30e852;
+body {
   font-size: 15px;
+  line-height: 1.5;
 }
 
-.mycomment p:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  right: -19px;
-  border: 8px solid transparent;
-  border-left: 18px solid #30e852;
-  -ms-transform: rotate(-35deg);
-  -webkit-transform: rotate(-35deg);
-  transform: rotate(-35deg);
+.wrapper {
+  max-width: 480px;
+  margin: auto;
+  background-color: #508DCC;
 }
 
-#message_content {
-  border-radius: 12px;
-  width: 80%;
-  float: left;
-}
 
-#submit_button {
-  float: right;
-  width: 18%;
-  border-radius: 12px;
-  margin-bottom: 15px;
-}
+/*
+ * ヘッダーレイアウト
+ *
+ */
 
 .navbar {
+  max-width: 480px;
+  margin: auto;
+  /* background-color: #3f8fde; // 生徒が作業するもの */
+}
+.navbar a {
+  color: #fff;
+}
+.nav > li > a:focus,
+.nav > li > a:hover {
+  background-color: #56a3ef;
+}
+.navbar-toggle .icon-bar {
   background-color: #fff;
-  border: 0;
+}
+.navbar-brand h1 {
+  margin-top: 0;
+  font-size: 24px;
+  line-height: .75;
+}
+
+/*
+ * メインレイアウト
+ *
+ */
+
+.main {
+  padding-top: 90px;
+  padding-bottom: 84px;
+  /* background-image: url("../images/background-image.jpg"); // 生徒が作業するもの */
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+/*
+ * チャットレイアウト
+ *
+ */
+
+.comment {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.comment-menu {
+  font-size: 13px;
+}
+.comment-menu a:after {
+  content: "|";
+  margin-left: 4px;
+  color: #555;
+}
+.comment-menu a:last-child:after {
+  content: "";
+}
+.message {
+  position: relative;
+  display: inline-block;
+  max-width: 280px;
+  padding: 8px 16px;
+  text-align: left;
+  border-radius: 12px;
+}
+.message:after {
+  position: absolute;
+  content: "";
+  border: 8px solid transparent;
+  transform: rotate(-2deg);
+}
+.message p {
+  margin-bottom: 0;
+}
+.my-comment .message {
+  margin-right: 10px;
+  background-color: #42e15e;
+}
+.my-comment .message:after {
+  top: 25%;
+  right: -20px;
+  border-left: 20px solid #42e15e;
+}
+.robo-comment {
+  display: flex;
+}
+.robo-comment .message {
+  margin-left: 20px;
+  background-color: #edf1ee;
+}
+.robo-comment .message:after {
+  top: 2%;
+  left: -20px;
+  border-right: 20px solid #edf1ee;
+}
+.robo-comment .message p {
+  margin-bottom: 5px;
+}
+.icon-chat {
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  background-image: url("/icon-robo.png");
+  background-size: 40px;
+  border-radius: 50%;
+}
+.icon-circle {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 3px solid #a94442;
+  border-radius: 50%;
+}
+.answer {
+  display: block;
+  padding: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  transition: border .2s ease-in-out;
+  cursor: pointer;
+}
+.answer:hover {
+  text-decoration: none;
+}
+
+/*
+ * フッターレイアウト
+ *
+ */
+
+.footer {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  max-width: 480px;
+  padding-top: 15px;
+  margin: auto;
+  background-color: #fff;
+}
+
+.footer .col-xs-9 {
+  padding-right: 0;
+}
+
+.border.border-danger {
+    border-color: #dc3545!important;
+}
+.border.border-primary {
+    border-color: #007bff!important;
 }

@@ -1,59 +1,29 @@
-<p id="notice"><%= notice %></p>
 <div class="panel panel-default">
-  <div class="panel-heading"><%= question.title %></div>
-
-  <div class="panel-body">
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="panel panel-defaulte show_panel a_1_<%= message.id %>">
-          <div class="panel-body"><p><%= question.a_1 %></p></div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="panel panel-defaulte show_panel a_2_<%= message.id %>">
-          <div class="panel-body"><p><%= question.a_2 %></p></div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="panel panel-defaulte show_panel a_3_<%= message.id %>">
-          <div class="panel-body"><p><%= question.a_3 %></p></div>
-        </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="panel panel-defaulte show_panel a_4_<%= message.id %>">
-          <div class="panel-body"><p><%= question.a_4 %></p></div>
-        </div>
-      </div>
-    </div>
+  <div class="panel-heading">
+    <%= question.title %>
   </div>
-</div>
+  <ul class="list-group">
+    <li class="list-group-item a_1_<%= message.id %>"><%= question.a_1 %></li>
+    <li class="list-group-item a_2_<%= message.id %>"><%= question.a_2 %></li>
+    <li class="list-group-item a_3_<%= message.id %>"><%= question.a_3 %></li>
+    <li class="list-group-item a_4_<%= message.id %>"><%= question.a_4 %></li>
+  </ul>
+  <div class="panel-footer">
 
-<div class="row">
-  <div class="col-sm-12">
     <% if message.answer == question.answer %>
-      <h3>正解！！答えは<%= answer_select(question) %>です。</h3>
+      <p class="text-danger"><i class="icon-circle"></i> 正解</p>
+      <p>正解！！答えは<%= answer_select(question) %>です。</p>
     <% else %>
-      <h3>残念・・・答えは<%= answer_select(question) %>でした。</h3>
+      <p class="text-info"><i class="glyphicon glyphicon-remove"></i> 残念</p>
+      <p>残念・・・答えは<%= answer_select(question) %>でした。</p>
     <% end %>
   </div>
 </div>
 
-<% if logged_in? %>
-  <%#= link_to 'Edit', edit_question_path(question) %>
-  <%#= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %>
-<% end %>
-
-<style>
-  .a_<%= question.answer %>_<%= message.id %> {
-    border-color: red;
+<script>
+  console.log('.a_<%= question.answer %>_<%= message.id %>');
+  $('.a_<%= question.answer %>_<%= message.id %>').addClass('list-group-item-danger');
+  if ('<%= message.answer.to_s %>' != '<%= question.answer.to_s %>') {
+    $('.a_<%= message.answer %>_<%= message.id %>').addClass('list-group-item-info');
   }
-
-  <% if message.answer != question.answer %>
-    .a_<%= message.answer %>_<%= message.id %> {
-      border-color: blue;
-    }
-  <% end %>
-</style>
-
+</script>

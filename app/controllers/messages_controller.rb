@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
       answer = answer_select(@question, params[:answer])
       # binding.pry
       Message.create!(content: answer)
-      @message = Message.new(content: "あなたの答えは " + answer + " です", answer: params[:answer], question_id: @question.id, robo: true)
+      @message = Message.new(content: "<p>あなたの答えは<span class='text-success'><strong>#{answer}</strong></span>です。</p>", answer: params[:answer], question_id: @question.id, robo: true)
     else
       @message = Message.new(message_params)
     end

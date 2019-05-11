@@ -1,10 +1,11 @@
 <%= form_with(model: message, local: true) do |f| %>
   <%= render 'layouts/error_messages', model: f.object %>
-
-  <div class="form-group">
-    <%= f.label :content %>
-    <%= f.text_field :content, class: 'form-control', placeholder: 'クイズを始めるには、 quiz と入力して下さい' %>
-
-    <%= f.submit "送信", class: 'btn btn-success', id: 'submit_button' %>
+  <div class="form-group row">
+    <div class="col-xs-9">
+      <%= f.text_field :content, class: 'form-control', placeholder: 'クイズを始めるには、 quiz と入力して下さい' %>
+    </div>
+    <div class="col-xs-3">
+      <%= f.submit "送信", class: 'btn btn-success btn-block', id: 'submit_button' %>
+    </div>
   </div>
 <% end %>
