@@ -1,38 +1,41 @@
-<%= form_with(model: question, local: true) do |form| %>
-  <%= render 'layouts/error_messages', model: form.object %>
+<div class="row">
+  <div class="col-xs-12">
+    <%= form_with(model: question, local: true) do |form| %>
+      <%= render 'layouts/error_messages', model: form.object %>
 
-  <div class="form-group">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: 'form-control' %>
+      <div class="form-group">
+        <%= form.label :title %>
+        <%= form.text_field :title, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :a_1 %>
+        <%= form.text_field :a_1, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :a_2 %>
+        <%= form.text_field :a_2, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :a_3 %>
+        <%= form.text_field :a_3, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :a_4 %>
+        <%= form.text_field :a_4, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.label :answer %>
+        <%= form.select :answer, { a_1: 1, a_2: 2, a_3: 3, a_4: 4 }, {}, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= form.submit '投稿する', class: 'btn btn-primary' %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="form-group">
-    <%= form.label :a_1 %>
-    <%= form.text_field :a_1, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :a_2 %>
-    <%= form.text_field :a_2, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :a_3 %>
-    <%= form.text_field :a_3, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :a_4 %>
-    <%= form.text_field :a_4, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.label :answer %>
-    <%= form.select :answer, { a_1: 1, a_2: 2, a_3: 3, a_4: 4 }, {}, class: 'form-control' %>
-  </div>
-
-  <div class="form-group">
-    <%= form.submit %>
-  </div>
-<% end %>
-
+</div>

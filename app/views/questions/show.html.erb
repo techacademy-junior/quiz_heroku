@@ -1,28 +1,31 @@
-<div class="row">
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_1">
-      <div class="panel-body"><p><%= @question.a_1 %></p></div>
+<div id="admin">
+  <p><%= notice %></p>
+  <h1><%= @question.title %></h1>
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="panel panel-defaulte show_panel a_1">
+        <div class="panel-body"><p><%= @question.a_1 %></p></div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-defaulte show_panel a_2">
+        <div class="panel-body"><p><%= @question.a_2 %></p></div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-defaulte show_panel a_3">
+        <div class="panel-body"><p><%= @question.a_3 %></p></div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="panel panel-defaulte show_panel a_4">
+        <div class="panel-body"><p><%= @question.a_4 %></p></div>
+      </div>
     </div>
   </div>
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_2">
-      <div class="panel-body"><p><%= @question.a_2 %></p></div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_3">
-      <div class="panel-body"><p><%= @question.a_3 %></p></div>
-    </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="panel panel-defaulte show_panel a_4">
-      <div class="panel-body"><p><%= @question.a_4 %></p></div>
-    </div>
-  </div>
+
+
+  <%= link_to 'Edit', edit_question_path(@question) %> |
+  <%= link_to 'Top', root_path %>
 </div>
-
-
-<%= link_to 'Edit', edit_question_path(@question) %> |
-<%= link_to 'Top', root_path %>
-
 
