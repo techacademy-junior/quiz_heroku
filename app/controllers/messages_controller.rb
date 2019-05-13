@@ -19,6 +19,7 @@ class MessagesController < ApplicationController
     end
 
     if @message.save && @message.content == "quiz"
+      Message.where(finished: false, robo: true, content: "クイズです！！").update_all(finished: true)
       @message_robo = Message.create!(content: 'クイズです！！',question_id: Question.pluck(:id).sample, robo: true)
       render :create
     elsif @message.save && params[:message_id].present?

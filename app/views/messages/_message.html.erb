@@ -1,7 +1,7 @@
 <% if message.robo == true %>
   <div class="robo-comment comment">
     <div class="icon-chat"></div>
-    <div class="message">
+    <div class="message" id="message-<%= message.id %>">
 
       <%== message.content %>
       <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>
@@ -11,7 +11,7 @@
   </div>
 <% else %>
   <div class="my-comment comment text-right">
-    <div class="message">
+    <div class="message" id="message-<%= message.id %>">
       <p>
         <%= message.content %>
         <%= render 'questions/question', question: message.question, message: message if !message.answer && message.question_id  %>

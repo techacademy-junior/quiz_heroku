@@ -1,8 +1,9 @@
 <% if @message_finished %>
-$('.robo-comment.comment:last').remove();
-$('.main .container-fluid').append('<%=j render 'messages/message', message: @message_finished %>');
-$('.main .container-fluid').append('<%=j render 'messages/message', message: @message_user %>');
+  $('.robo-comment.comment:last').remove();
+  $('.main .container-fluid').append('<%=j render 'messages/message', message: @message_finished %>');
+  $('.main .container-fluid').append('<%=j render 'messages/message', message: @message_user %>');
 <% end %>
+$('#message-<%= @message.id - 1 %>').parent().html('<%=j render 'messages/message', message: Message.find(@message.id - 1) %>');
 $('.main .container-fluid').append('<%=j render 'messages/message', message: @message %>');
 <% if @message_robo %>
   $('.main .container-fluid').append('<%=j render 'messages/message', message: @message_robo %>');
