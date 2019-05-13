@@ -18,6 +18,7 @@
           <ul class="nav navbar-nav navbar-right">
             <% if logged_in? %>
               <li><%= link_to 'クイズ登録', new_question_path %></li>
+              <li><%= link_to 'クイズ一覧', questions_path %></li>
               <li><%= link_to 'ログアウト', logout_path, method: :delete %></li>
             <% else %>
               <li><%= link_to '管理者ログイン', login_path %>
