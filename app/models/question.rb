@@ -1,4 +1,5 @@
 class Question < ApplicationRecord
+  has_many :messages, dependent: :destroy
   validates :title, presence: true, length: { maximum: 50 }
   validates :a_1, presence: true, length: { maximum: 50 }
   validates :a_2, presence: true, length: { maximum: 50 }

@@ -4,20 +4,17 @@ class MessagesController < ApplicationController
     @message = Message.new
   end
 
-  def
-
-
-    create
+  def create
+    @messages = Message.all.order(created_at: :asc)
+    @message_count = @messages.count
     if params[:question_id]
       @question = Question.find(params[:question_id])
       answer = answer_select(@question, params[:answer])
-      # binding.pry
       @message_user = Message.create!(content: answer)
       @message = Message.new(content: "<p>あなたの答えは<span class='text-success'><strong>#{answer}</strong></span>です。</p>", answer: params[:answer], question_id: @question.id, robo: true)
     else
       @message = Message.new(message_params)
     end
-
     if @message.save && @message.content == "quiz"
       Message.where(finished: false, robo: true, content: "クイズです！！").update_all(finished: true)
       @message_robo = Message.create!(content: 'クイズです！！',question_id: Question.pluck(:id).sample, robo: true)
@@ -30,7 +27,6 @@ class MessagesController < ApplicationController
     elsif @message.save
       render :create
     else
-      @messages = Message.all.order(created_at: :asc)
       render :index
     end
   end
