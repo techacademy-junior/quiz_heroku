@@ -7,7 +7,7 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.create!(email: "admin@test.com", password: "password")
 
-iquestions = [
+questions = [
               %w(この中で昆虫でないものはどれ？
                  カブトムシ
                  クワガタ
