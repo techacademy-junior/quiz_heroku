@@ -5,8 +5,8 @@
 <% end %>
 <% if @message_count != 0 %>
   $('#message-<%= @message.id - 1 %>').parent().html('<%=j render 'messages/message', message: Message.find(@message.id - 1) %>');
-  $('.main .container-fluid').append('<%=j render 'messages/message', message: @message %>');
 <% end %>
+  $('.main .container-fluid').append('<%=j render 'messages/message', message: @message %>');
 <% if @message_robo %>
   $('.main .container-fluid').append('<%=j render 'messages/message', message: @message_robo %>');
 <% end %>
